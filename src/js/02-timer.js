@@ -40,6 +40,7 @@ const options = {
 };
 // let calculatedMs;
 startButton.addEventListener('click', e => {
+  startButton.setAttribute('disabled', true);
   const intervalSet = setInterval(() => {
     let todayDate = new Date();
     const calculatedMs = dateToSelect - todayDate;
@@ -58,7 +59,7 @@ startButton.addEventListener('click', e => {
     const secondsNode = dateNode[3];
     secondsNode.textContent = addLeadingZero(obj.seconds);
 
-    if (calculatedMs <= 0) clearInterval(intervalSet);
+    if (calculatedMs <= 1000) clearInterval(intervalSet);
   }, 1000);
 });
 
