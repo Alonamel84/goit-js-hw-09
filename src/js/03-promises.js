@@ -21,8 +21,8 @@ const buttonNode = document.querySelector('button');
 buttonNode.addEventListener('submit', e => {
   e.preventDefault();
   console.log(delayNode.value);
-  for (let position = 1; position <= amountNode; position++) {
-    delay = delayNode + stepNode;
+  for (let position = 1; position <= amountNode.value; position++) {
+    delay = delayNode.value + stepNode.value;
     createPromise(position, delay)
       .then(({ position, delay }) => {
         console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
